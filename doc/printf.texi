@@ -1,0 +1,21 @@
+@node naoyat.printf, , 関数リファレンス, 関数リファレンス
+@section naoyat.printf
+
+C言語風な@code{printf}/@code{sprintf}を提供します。
+デバッグに使うのがメインかと思いますが、@code{format}が嫌いな人は日常的な用途にも使うかもしれません。
+
+独自仕様として、@code{%b}で２進表記が得られるようになっています。（嫌なら該当部分をコメントアウトしてください）
+
+※@code{printf}/@code{sprintf} はslibにもあります。c-wrapperでも行けると思います。
+
+@defun printf fmt args ...
+@end defun
+
+@defun sprintf fmt args ...
+@lisp
+(printf "%03d" 7) @result{} "007"
+(printf "%x" 15) @result{} "f"
+(printf "|%5s,%-5s|" "abc" "def") @result{} "|  abc,def  |"
+(printf "%g" 1/2) @result{} "0.5"
+@end lisp
+@end defun

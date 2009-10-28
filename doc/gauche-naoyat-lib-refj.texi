@@ -1,0 +1,99 @@
+\input texinfo
+@comment %**start of header
+@c JP
+@setfilename gauche-naoyat-lib-refj.info
+@settitle gauche-naoyat-lib リファレンス
+@dircategory Gauche naoya_t
+@direntry
+* gauche-naoyat-lib: (gauche-naoyat-lib-refj.info).
+@end direntry
+@documentlanguage ja
+@documentencoding utf-8
+@comment %**end of header
+
+@titlepage
+@title gauche-naoyat-lib
+@subtitle version 0.0.1
+@author naoya_t
+@end titlepage
+
+@node Top, はじめに, (dir), (dir)
+
+@ifnottex
+@c JP
+本ドキュメントは、naoya_t の私用ライブラリ gauche-naoyat-lib のリファレンスマニュアルです。
+Gaucheのバージョン0.8.14(以降)に対応します。
+@end ifnottex
+
+@menu
+* はじめに::
+* 関数リファレンス::
+* 関数目次::
+@end menu
+
+
+@node はじめに, 関数リファレンス, Top, Top
+@chapter はじめに
+@c NODE Top
+
+gauche-naoyat-lib は、naoya_t の私用ライブラリです。中には
+@table
+@item ・それslibにあるよ
+@item ・それc-wrapperでできるよ
+@item ・ていうかそれsrfiに（ry
+@end table
+的な関数もあるかもしれません。はい。
+
+
+@node 関数リファレンス, , はじめに, Top
+@chapter 関数リファレンス
+
+@menu
+* naoyat.list::                 
+* naoyat.vector::               
+* naoyat.printf::             C言語風なprintf
+* naoyat.matrix::             R言語風な行列記法
+* naoyat.math::               数学関連ライブラリ
+* naoyat.math.random::        乱数
+* naoyat.math.distribution::  分布
+* naoyat.math.erf::           エラー関数
+* naoyat.math.prime::         素数
+* naoyat.math.h::             libmの関数でgaucheに載ってないやつ（c-wrapper経由）
+* naoyat.binary::             
+* naoyat.binary.io::          バイナリ読み書き
+* naoyat.graph::              
+* naoyat.graph.gd::           
+* naoyat.graph.opengl::       
+* naoyat.sound::              
+* naoyat.sound.aiff::         AIFFファイルの読み書き
+* naoyat.mac::                
+* naoyat.mac.speech::         
+* naoyat.mac.applescript::    
+* naoyat.mac.skype::          
+@c * naoyat.misc.neural-net-matrix::
+* naoyat.cl::                 Common Lisp風な
+* naoyat.test::               テスト補助
+* naoyat.misc::               
+@c* naoyat.misc.neural-net::    
+@end menu
+
+@include list.texi
+@include vector.texi
+@include printf.texi
+@include math.texi
+@include graph.texi
+@include matrix.texi
+@include binary.texi
+@include sound.texi
+@include mac.texi
+@include cl.texi
+@include test.texi
+@include misc.texi
+
+@node 関数目次,, Top, Top
+@appendix 関数目次
+@c NODE Index - <BC><EA>³<A4><AD><A4>ȹ<BD>ʸ<BA><F7><B0><FA>
+@printindex fn
+
+@c @contents
+@bye

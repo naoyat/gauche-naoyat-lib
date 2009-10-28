@@ -1,0 +1,16 @@
+@node naoyat.vector, , 関数リファレンス, 関数リファレンス
+@section naoyat.vector
+
+ベクタ演算関連
+
+@defun vector-inc! vec i [delta]
+delta を省略した場合 1
+
+@code{vec[i] += delta}
+@end defun
+
+@defun vector-dec! vec i [delta]
+delta を省略した場合 1
+
+@code{vec[i] -= delta}
+@end defun

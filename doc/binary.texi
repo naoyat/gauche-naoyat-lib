@@ -1,0 +1,16 @@
+@node naoyat.binary, naoyat.binary.io, 関数リファレンス, 関数リファレンス
+@section naoyat.binary
+
+@node naoyat.binary.io, , 関数リファレンス, 関数リファレンス
+@subsection naoyat.binary.io
+
+IEEE Standard 754 (80ビット浮動小数点数) の読み書きを提供する@code{read-f80}/@code{write-f80}の２関数を提供しています。
+
+@defun read-f80
+カレントポートから80ビット浮動小数点数を読み取って返します。
+の読み書きを提供する@code{read-f80}/@code{write-f80}の２関数を提供しています。
+@end defun
+
+@defun write-f80 value
+実数値 value をカレントポートに80ビット浮動小数点数で書き込みます。
+@end defun

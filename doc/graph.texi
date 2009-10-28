@@ -1,0 +1,13 @@
+@node naoyat.graph, , 関数リファレンス, 関数リファレンス
+@section naoyat.graph
+
+@menu
+* naoyat.graph.gd::
+* naoyat.graph.opengl::
+@end menu
+
+@node naoyat.graph.gd, , naoyat.graph, naoyat.graph
+@section naoyat.graph.gd
+
+@node naoyat.graph.opengl, , naoyat.graph, naoyat.graph
+@section naoyat.graph.opengl

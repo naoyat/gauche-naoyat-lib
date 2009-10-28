@@ -1,0 +1,5 @@
+@node naoyat.matrix, , 関数リファレンス, 関数リファレンス
+@section naoyat.matrix
+
+R言語風の行列演算記法を提供します。
+但し、添字は０ベースです。

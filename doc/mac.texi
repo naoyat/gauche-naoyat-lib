@@ -1,0 +1,74 @@
+@node naoyat.mac, , 関数リファレンス, 関数リファレンス
+@section naoyat.mac
+
+@menu
+* naoyat.mac.speech::
+* naoyat.mac.applescript::
+* naoyat.mac.skype::
+@end menu
+
+@defun open-paths-with-command cmd paths
+リスト paths に含まれるファイルをコマンド cmd で開きます。
+@end defun
+@defun open-file file1 [file2 ...]
+引数で指定したファイルをFinderで開きます。
+@end defun
+@defun open-image image-file1 [image-file2 ...]
+引数で指定した画像ファイルをFinderで開きます。
+@end defun
+@defun open-movie movie-file1 [movie-file2 ...]
+引数で指定した音声/動画ファイルをQuickTimeで再生します。
+@end defun
+
+
+@node naoyat.mac.speech, , naoyat.mac, naoyat.mac
+@subsection naoyat.mac.speech
+
+@defun say voice text
+指定の voice でテキスト text を読み上げます。
+
+voice は '(Bruce Deranged Victoria Bahh Bad News Kathy Hysterical Fred Agnes Trinoids Albert Whisper Pipe Organ Cellos Vicki Bubbles Zarvox Princess Junior Good News Bells Ralph Boing) のどれかです。
+@end defun
+@defun say-tuned
+@end defun
+@defun say-katakana-with-tune
+@end defun
+
+
+@node naoyat.mac.applescript, , naoyat.mac, naoyat.mac
+@subsection naoyat.mac.applescript
+
+@defun execute-applescript script
+AppleScriptで記述された文字列 script を実行し、結果を文字列のリストとして返します。
+@end defun
+@defun execute-applescript* sript
+AppleScriptで記述された文字列 script を実行し、結果を文字列として返します。
+@end defun
+@defun execute-applescript-line one-liner
+１行のAppleScriptを実行します。
+@end defun
+
+
+@node naoyat.mac.skype, , naoyat.mac, naoyat.mac
+@subsection naoyat.mac.skype
+
+@defun skype-send-command
+@end defun
+@defun skype-launch
+@end defun
+@defun skype-call
+@end defun
+@defun skype-call-jp
+@end defun
+@defun skype-set-moodtext
+@end defun
+@defun skype-ping
+@end defun
+@defun skype-get
+@end defun
+@defun skype-show
+@end defun
+@defun skype-get-profile
+@end defun
+@defun skype-get-user-profile
+@end defun

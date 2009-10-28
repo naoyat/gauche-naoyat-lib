@@ -1,0 +1,16 @@
+@node naoyat.sound, , 関数リファレンス, 関数リファレンス
+@section naoyat.sound
+
+@menu
+* naoyat.sound.aiff::
+@end menu
+
+@node naoyat.sound.aiff, , naoyat.sound, naoyat.sound
+@subsection naoyat.sound.aiff
+
+@defun save-as-aiff-file file-name sample-rate sample-bit-size stereo-mode sound-vecs
+@end defun
+@defun save-as-aiff* file-name data sec
+@end defun
+@defun open-aiff-file aiff-file-name
+@end defun

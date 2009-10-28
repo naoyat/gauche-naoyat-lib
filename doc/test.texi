@@ -1,0 +1,28 @@
+@node naoyat.test, , 関数リファレンス, 関数リファレンス
+@section naoyat.test
+
+@defun ~= epsilon x y
+@end defun
+@defun every~= epsilon xs ys
+@end defun
+@defun ~7=
+2引数を取り、差が1e-7未満なら真を返す関数
+@end defun
+@defun ~8=
+2引数を取り、差が1e-8未満なら真を返す関数
+@end defun
+
+@defun ask-human
+真偽の判断を人間に委ね、真偽値として返します。
+
+不明な場合は@code{#<undef>}を返します。
+@end defun
+
+@defun have-human-see proc
+procを実行した結果を人間が判断し、真偽値として返します。
+不明な場合は（判断がつくまで）procを繰り返し実行します。
+@end defun
+
+@defun manual-test* msg thunk
+thunkについて、人間の判断に委ねたテストを行います。
+@end defun

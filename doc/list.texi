@@ -1,0 +1,30 @@
+@node naoyat.list, , 関数リファレンス, 関数リファレンス
+@section naoyat.list
+
+@defun fringe tree
+木treeのすべての葉を左から右の順に並べたリストを返します。
+(SICP 問題2.28)
+@end defun
+
+@defun assq-value key assoc-list
+@end defun
+@defun assv-value key assoc-list
+@end defun
+@defun assoc-value key assoc-list
+連想リストassoc-listに、car成分がkeyと一致する(@code{eq?/eqv?/equal?})ペアがあればそのcdr成分を、無ければ#fを返します。
+@end defun
+
+@defun make-list-with-generator len gen
+長さlenのリストを作ります。
+リストの各要素はジェネレータ関数genでセットします。
+@end defun
+
+@defun make-random-int-list len min max
+min以上max未満のランダムな整数値を各要素に持つ、長さlenのリストを作ります。
+@end defun
+
+@defun make-list* len fill
+fillがアトムの場合、SRFI-1の@code{make-list}と同じ振舞いをします。
+
+fillがリストの場合、fillのパターンを繰り返して埋めた長さlenのリストを生成します。
+@end defun

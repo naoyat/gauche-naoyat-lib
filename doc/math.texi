@@ -1,0 +1,220 @@
+@node naoyat.math, naoyat.math.random, 関数リファレンス, 関数リファレンス
+@section naoyat.math
+
+(naoya_tが)よく使う数学的関数をまとめています。
+libm の関数をc-wrapper経由で直接呼び出すものは @ref{naoyat.math.h} をご参照ください。
+
+@defun != x y
+@code{(x != y)}を真偽値で返します。
+@end defun
+
+@defun square x
+xの２乗を返します。
+@end defun
+
+@defun factorial x
+xの階乗 (x!) を返します。
+@end defun
+
+@defun C n m
+nCm を返します。
+@end defun
+
+@defun Σ list
+list の要素の和を返します。
+@end defun
+
+@defun Π list
+list の要素の積を返します。
+@end defun
+
+@defun log2 x
+底を2とする対数を返します。
+@end defun
+
+@defun log10 x
+底を10とする対数を返します。
+@end defun
+
+@defun log16 x
+底を16とする対数を返します。
+@end defun
+
+@defun interpolate x0 x1 t
+実数値x0,x1,tに対し、t=0の時の値をx0、t=1の時の値をx1とした線形補間(内挿/外挿)を行います。
+tは[0,1]に含まれなくても構いません。
+@end defun
+
+@defun inf-filter x [limit]
+xがNaNの場合に#fを返す以外は
+@code{(clamp x -limit +limit)}
+と同義です。グラフを描くときに使っています。
+@end defun
+
+@defun expt* x y
+@code{expt}同様 x^y を返しますが、x=0の時に0を返します。
+@end defun
+
+@defun logistic-sigmoid a
+@end defun
+@defun σ
+ロジスティック・シグモイド関数 1/(1 + exp(-a))
+@end defun
+
+@defun logit
+ロジット関数 log( p/(1-p) )
+@end defun
+
+@menu
+* naoyat.math.random::        乱数
+* naoyat.math.distribution::  分布
+* naoyat.math.erf::           エラー関数
+* naoyat.math.prime::         素数
+* naoyat.math.h::             libmの関数でgaucheに載ってないやつ（c-wrapper経由）
+@end menu
+
+@node naoyat.math.random, naoyat.math.distribution, naoyat.math, naoyat.math
+@subsection naoyat.math.random
+乱数
+
+@defun random-integer min max
+Mersenne-Twisterを用い、[min,max]の範囲の整数をランダムに生成します。
+@end defun
+
+@defun make-uniform-rand min max
+Mersenne-Twisterを用い、[min,max]の範囲の実数をランダムに生成する関数を返します。
+@end defun
+
+@defun box-muller-rand
+Box-Muller法を用いガウス分布（正規分布）乱数を生成します。
+@end defun
+
+@defun make-nd-rand μ σ
+平均μ,分散σをもつガウス分布（正規分布）乱数を生成する関数を返します。
+
+内部でBox-Muller法を用いています。
+@end defun
+
+@defun make-nd2-rand μ Σ
+平均μ,共分散行列Σをもつ二次元ガウス分布乱数を生成する関数を返します。
+
+内部でBox-Muller法を用いています。
+@end defun
+
+
+@node naoyat.math.distribution, naoyat.math.erf, naoyat.math.random, naoyat.math
+@subsection naoyat.math.distribution
+分布
+
+@defun make-Bernoulli-distribution
+ベルヌーイ分布 Bernoulli distribution
+@end defun
+
+@defun make-binomial-distribution
+二項分布 binomial distribution
+@end defun
+
+@defun make-beta-distribution
+ベータ分布 beta distribution
+@end defun
+
+@defun make-multinomial-distribution
+多項分布 multinomial distribution
+@end defun
+
+@defun make-Dirichlet-distribution
+ディリクレ分布 Dirichlet distribution
+@end defun
+
+@node naoyat.math.erf, naoyat.math.prime, naoyat.math.distribution, naoyat.math
+@subsection naoyat.math.erf
+エラー関数 (error function)
+
+@defun erf
+@end defun
+
+@defun erfc
+@end defun
+
+@defun complex-erf
+@end defun
+
+@defun inverse-erf
+@end defun
+
+@defun normal-cumulative-distribution
+@end defun
+@defun Φ
+@end defun
+
+@defun probit
+@end defun
+
+@node naoyat.math.h, , naoyat.math.erf, naoyat.math
+@subsection naoyat.math.h
+libmには含まれるがgaucheには載ってないものを（c-wrapper経由で）を使うためのモジュールです。
+
+@defun erf
+erf関数 (error function)
+@end defun
+
+@defun erfc
+@end defun
+
+@defun tgamma
+@end defun
+
+@defun Γ
+Γ関数 (true gamma)
+@end defun
+
+@node naoyat.math.prime, naoyat.math.h, naoyat.math.erf, naoyat.math
+@subsection naoyat.math.prime
+素数
+
+@defun primes-until n
+n以下の素数をリストで返します。キャッシュがあればそれを利用します。
+@end defun
+
+@defun prepare-primes-until
+n以下の素数を求め、キャッシュしておきます。
+@end defun
+
+@defun prime? n
+nが素数かどうかを判定し、真偽値を返します。
+@end defun
+
+@defun prime-factors
+
+@end defun
+@defun prime-factors*
+@end defun
+@defun prime-factor-table
+@end defun
+
+@defun largest-prime-factor n
+nの素因数のうち最も大きいものを返します。
+@end defun
+@defun nth-prime n
+n番目の素数を返します。
+@end defun
+@defun the-sum-of-the-primes-below-n
+nまでの素数の和を返します。
+@end defun
+@defun longest-sum-of-consecutive-primes n
+nまでの数で、連続する素数の和である数のうち、最も多くの素数から成るものを返します。
+@end defun
+@defun n-digit-primes n
+n桁の素数をリストで返します。
+@end defun
+
+@defun fast-prime? n [times]
+Miller-Rabin法を用いた素数判定を行い、真偽値を返します。
+但しnが2の場合は@code{#t}を、2以外の偶数の場合は@code{#f}を無条件に返します。
+Miller-Rabin法の繰返し回数はtimesで指定します。（省略した場合は3）
+@end defun
+
+
+@node naoyat.math.h, , naoyat.math.prime, naoyat.math
+@subsection naoyat.math.h
+libmの関数でgaucheに載ってないやつ（c-wrapper経由）

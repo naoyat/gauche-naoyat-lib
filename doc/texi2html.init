@@ -1,0 +1,10 @@
+# -*- mode: perl -*-
+
+$USE_UNICODE = 0;
+#$ENCODING = "euc-jp";
+
+$NO_NAVIGATION = 1;
+$ADDRESS = '';
+$INFO = '';
+
+1;

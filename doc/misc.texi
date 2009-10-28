@@ -1,0 +1,9 @@
+@node naoyat.misc, , 関数リファレンス, 関数リファレンス
+@section naoyat.misc
+
+@menu
+* naoyat.misc.neural-net::
+@end menu
+
+@node naoyat.misc.neural-net, , naoyat.misc, naoyat.misc
+@subsection naoyat.misc.neural-net

@@ -1,0 +1,49 @@
+\input texinfo
+@comment %**start of header
+@setfilename ikoma.info
+@settitle サンプルファイル生駒
+@dircategory Ikoma Around The World
+@direntry
+* Ikoma (ja): (ikoma.info).  Ikoma Ikoma Ikoma.
+@end direntry
+@documentencoding utf8
+@comment %**end of header
+
+@titlepage
+@title ひょうたんからいこま
+@subtitle version 0.0.1
+@author naoya_t
+@end titlepage
+
+@node 生駒, , (dir), (dir)
+@chapter 生駒
+@c NODE はじめに
+
+@example
+def main
+   printf(``Hello, World!\n'');
+@end example
+
+@menu
+* 宝山寺::
+* 東生駒::
+@end menu
+
+@node 宝山寺, 東生駒, 生駒, 生駒
+@section 宝山寺
+
+生駒山上遊園地への道中
+
+@node 東生駒, , 宝山寺, 生駒
+@section 東生駒
+
+生駒から近鉄奈良線の普通列車で次の駅。
+（快速だと学園前だよ）
+
+@table @b
+@item 生駒市図書会館
+@item COCO'S
+@end table
+
+@contents
+@bye
