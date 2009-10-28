@@ -1,80 +1,1554 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on 2009年10月月28日 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>gauche-naoyat-lib リファレンス</title>
 
-	<title>naoyat/gauche-naoyat-lib @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #f31836;
-		  font-family: "Helvetica,Arial,FreeSans"; 
-  		color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #0ce7c9; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #0ce7c9; }
-    h3 { text-align: center; color: #0ce7c9; }
-    a { color: #0ce7c9; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
+<meta name="description" content="gauche-naoyat-lib リファレンス">
+<meta name="keywords" content="gauche-naoyat-lib リファレンス">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
 </head>
 
-<body>
-  <a href="http://github.com/naoyat/gauche-naoyat-lib"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-  
-  <div id="container">
+<body lang="ja" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 
-    <div class="download">
-      <a href="http://github.com/naoyat/gauche-naoyat-lib/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/naoyat/gauche-naoyat-lib/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-      
-    <h1><a href="http://github.com/naoyat/gauche-naoyat-lib">gauche-naoyat-lib</a> 
-      <span class="small">by <a href="http://github.com/naoyat">naoyat</a></span></h1>
+<a name="Top"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="settitle">gauche-naoyat-lib リファレンス</h1>
 
-    <div class="description">
-      naoya_t's scheme (gauche) library
-    </div>
-
-    <h2>Authors</h2>
-<p>naoya_t (naoya_t@users.sourceforge.jp)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>naoya_t (naoya_t@users.sourceforge.jp)<br/>      </p>
+<p>本ドキュメントは、naoya_t の私用ライブラリ gauche-naoyat-lib のリファレンスマニュアルです。
+Gaucheのバージョン0.8.14(以降)に対応します。
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#g_t_00e3_0081_00af_00e3_0081_0098_00e3_0082_0081_00e3_0081_00ab">1. はじめに</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9">2. 関数リファレンス</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+<tr><td align="left" valign="top"><a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1">A. 関数目次</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top"></td></tr>
+</table>
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/naoyat/gauche-naoyat-lib/zipball/master">zip</a> or
-      <a href="http://github.com/naoyat/gauche-naoyat-lib/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/naoyat/gauche-naoyat-lib</pre>
-    </p>
-      
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/naoyat/gauche-naoyat-lib">naoyat/gauche-naoyat-lib</a>
-    </div>
-    
-  </div>
+<hr size="1">
+<a name="g_t_00e3_0081_00af_00e3_0081_0098_00e3_0082_0081_00e3_0081_00ab"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[ &lt;&lt; ]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="g_t_00e3_0081_00af_00e3_0081_0098_00e3_0082_0081_00e3_0081_00ab-1"></a>
+<h1 class="chapter">1. はじめに</h1>
 
-  
+<p>gauche-naoyat-lib は、naoya_t の私用ライブラリです。中には
+</p><dl compact="compact">
+<dt> ・それslibにあるよ</dt>
+<dt> ・それc-wrapperでできるよ</dt>
+<dt> ・ていうかそれsrfiに（ry</dt>
+</dl>
+<p>的な関数もあるかもしれません。はい。
+</p>
+
+<hr size="6">
+<a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#g_t_00e3_0081_00af_00e3_0081_0098_00e3_0082_0081_00e3_0081_00ab" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002elist" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e3_0081_00af_00e3_0081_0098_00e3_0082_0081_00e3_0081_00ab" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9-1"></a>
+<h1 class="chapter">2. 関数リファレンス</h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                 
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002evector">2.2 naoyat.vector</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002eprintf">2.3 naoyat.printf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">             C言語風なprintf
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002ematrix">2.8 naoyat.matrix</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">             R言語風な行列記法
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               数学関連ライブラリ
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        乱数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  分布
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">           エラー関数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">         素数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">             libmの関数でgaucheに載ってないやつ（c-wrapper経由）
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002ebinary">2.9 naoyat.binary</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">             
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002ebinary_002eio">2.9.1 naoyat.binary.io</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">          バイナリ読み書き
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002egraph">2.5 naoyat.graph</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002egraph_002egd">2.6 naoyat.graph.gd</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">           
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002egraph_002eopengl">2.7 naoyat.graph.opengl</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">       
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002esound">2.10 naoyat.sound</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">              
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002esound_002eaiff">2.10.1 naoyat.sound.aiff</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">         AIFFファイルの読み書き
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac">2.11 naoyat.mac</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002espeech">2.11.1 naoyat.mac.speech</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">         
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002eapplescript">2.11.2 naoyat.mac.applescript</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">    
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">          
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002ecl">2.12 naoyat.cl</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                 Common Lisp風な
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               テスト補助
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emisc">2.14 naoyat.misc</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">               
+@c* naoyat.misc.neural-net::    
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="naoyat_002elist"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002evector" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002elist-1"></a>
+<h2 class="section">2.1 naoyat.list</h2>
+
+<dl>
+<dt><a name="index-fringe"></a><u>Function:</u> <b>fringe</b><i> tree</i></dt>
+<dd><p>木treeのすべての葉を左から右の順に並べたリストを返します。
+(SICP 問題2.28)
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-assq_002dvalue"></a><u>Function:</u> <b>assq-value</b><i> key assoc-list</i></dt>
+</dl>
+<dl>
+<dt><a name="index-assv_002dvalue"></a><u>Function:</u> <b>assv-value</b><i> key assoc-list</i></dt>
+</dl>
+<dl>
+<dt><a name="index-assoc_002dvalue"></a><u>Function:</u> <b>assoc-value</b><i> key assoc-list</i></dt>
+<dd><p>連想リストassoc-listに、car成分がkeyと一致する(<code>eq?/eqv?/equal?</code>)ペアがあればそのcdr成分を、無ければ#fを返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dlist_002dwith_002dgenerator"></a><u>Function:</u> <b>make-list-with-generator</b><i> len gen</i></dt>
+<dd><p>長さlenのリストを作ります。
+リストの各要素はジェネレータ関数genでセットします。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002drandom_002dint_002dlist"></a><u>Function:</u> <b>make-random-int-list</b><i> len min max</i></dt>
+<dd><p>min以上max未満のランダムな整数値を各要素に持つ、長さlenのリストを作ります。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dlist_002a"></a><u>Function:</u> <b>make-list*</b><i> len fill</i></dt>
+<dd><p>fillがアトムの場合、SRFI-1の<code>make-list</code>と同じ振舞いをします。
+</p>
+<p>fillがリストの場合、fillのパターンを繰り返して埋めた長さlenのリストを生成します。
+</p></dd></dl>
+<hr size="6">
+<a name="naoyat_002evector"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002elist" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002eprintf" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002evector-1"></a>
+<h2 class="section">2.2 naoyat.vector</h2>
+
+<p>ベクタ演算関連
+</p>
+<dl>
+<dt><a name="index-vector_002dinc_0021"></a><u>Function:</u> <b>vector-inc!</b><i> vec i [delta]</i></dt>
+<dd><p>delta を省略した場合 1
+</p>
+<p><code>vec[i] += delta</code>
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-vector_002ddec_0021"></a><u>Function:</u> <b>vector-dec!</b><i> vec i [delta]</i></dt>
+<dd><p>delta を省略した場合 1
+</p>
+<p><code>vec[i] -= delta</code>
+</p></dd></dl>
+<hr size="6">
+<a name="naoyat_002eprintf"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002evector" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002eprintf-1"></a>
+<h2 class="section">2.3 naoyat.printf</h2>
+
+<p>C言語風な<code>printf</code>/<code>sprintf</code>を提供します。
+デバッグに使うのがメインかと思いますが、<code>format</code>が嫌いな人は日常的な用途にも使うかもしれません。
+</p>
+<p>独自仕様として、<code>%b</code>で２進表記が得られるようになっています。（嫌なら該当部分をコメントアウトしてください）
+</p>
+<p>※<code>printf</code>/<code>sprintf</code> はslibにもあります。c-wrapperでも行けると思います。
+</p>
+<dl>
+<dt><a name="index-printf"></a><u>Function:</u> <b>printf</b><i> fmt args ...</i></dt>
+</dl>
+
+<dl>
+<dt><a name="index-sprintf"></a><u>Function:</u> <b>sprintf</b><i> fmt args ...</i></dt>
+<dd><table><tr><td>&nbsp;</td><td><pre class="lisp">(printf &quot;%03d&quot; 7) &rArr; &quot;007&quot;
+(printf &quot;%x&quot; 15) &rArr; &quot;f&quot;
+(printf &quot;|%5s,%-5s|&quot; &quot;abc&quot; &quot;def&quot;) &rArr; &quot;|  abc,def  |&quot;
+(printf &quot;%g&quot; 1/2) &rArr; &quot;0.5&quot;
+</pre></td></tr></table>
+</dd></dl>
+<hr size="6">
+<a name="naoyat_002emath"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002eprintf" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002erandom" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath-1"></a>
+<h2 class="section">2.4 naoyat.math</h2>
+
+<p>(naoya_tが)よく使う数学的関数をまとめています。
+libm の関数をc-wrapper経由で直接呼び出すものは <a href="#naoyat_002emath_002eh">naoyat.math.h</a> をご参照ください。
+</p>
+<dl>
+<dt><a name="index-_0021_003d"></a><u>Function:</u> <b>!=</b><i> x y</i></dt>
+<dd><p><code>(x != y)</code>を真偽値で返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-square"></a><u>Function:</u> <b>square</b><i> x</i></dt>
+<dd><p>xの２乗を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-factorial"></a><u>Function:</u> <b>factorial</b><i> x</i></dt>
+<dd><p>xの階乗 (x!) を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-C"></a><u>Function:</u> <b>C</b><i> n m</i></dt>
+<dd><p>nCm を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_00ce_00a3"></a><u>Function:</u> <b>Σ</b><i> list</i></dt>
+<dd><p>list の要素の和を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-_00ce_00a0"></a><u>Function:</u> <b>Π</b><i> list</i></dt>
+<dd><p>list の要素の積を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-log2"></a><u>Function:</u> <b>log2</b><i> x</i></dt>
+<dd><p>底を2とする対数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-log10"></a><u>Function:</u> <b>log10</b><i> x</i></dt>
+<dd><p>底を10とする対数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-log16"></a><u>Function:</u> <b>log16</b><i> x</i></dt>
+<dd><p>底を16とする対数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-interpolate"></a><u>Function:</u> <b>interpolate</b><i> x0 x1 t</i></dt>
+<dd><p>実数値x0,x1,tに対し、t=0の時の値をx0、t=1の時の値をx1とした線形補間(内挿/外挿)を行います。
+tは[0,1]に含まれなくても構いません。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-inf_002dfilter"></a><u>Function:</u> <b>inf-filter</b><i> x [limit]</i></dt>
+<dd><p>xがNaNの場合に#fを返す以外は
+<code>(clamp x -limit +limit)</code>
+と同義です。グラフを描くときに使っています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-expt_002a"></a><u>Function:</u> <b>expt*</b><i> x y</i></dt>
+<dd><p><code>expt</code>同様 x^y を返しますが、x=0の時に0を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-logistic_002dsigmoid"></a><u>Function:</u> <b>logistic-sigmoid</b><i> a</i></dt>
+</dl>
+<dl>
+<dt><a name="index-_00cf_0083"></a><u>Function:</u> <b>σ</b></dt>
+<dd><p>ロジスティック・シグモイド関数 1/(1 + exp(-a))
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-logit"></a><u>Function:</u> <b>logit</b></dt>
+<dd><p>ロジット関数 log( p/(1-p) )
+</p></dd></dl>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">        乱数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">  分布
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">           エラー関数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">         素数
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">             libmの関数でgaucheに載ってないやつ（c-wrapper経由）
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="naoyat_002emath_002erandom"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002edistribution" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath_002erandom-1"></a>
+<h3 class="subsection">2.4.1 naoyat.math.random</h3>
+<p>乱数
+</p>
+<dl>
+<dt><a name="index-random_002dinteger"></a><u>Function:</u> <b>random-integer</b><i> min max</i></dt>
+<dd><p>Mersenne-Twisterを用い、[min,max]の範囲の整数をランダムに生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002duniform_002drand"></a><u>Function:</u> <b>make-uniform-rand</b><i> min max</i></dt>
+<dd><p>Mersenne-Twisterを用い、[min,max]の範囲の実数をランダムに生成する関数を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-box_002dmuller_002drand"></a><u>Function:</u> <b>box-muller-rand</b></dt>
+<dd><p>Box-Muller法を用いガウス分布（正規分布）乱数を生成します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dnd_002drand"></a><u>Function:</u> <b>make-nd-rand</b><i> μ σ</i></dt>
+<dd><p>平均μ,分散σをもつガウス分布（正規分布）乱数を生成する関数を返します。
+</p>
+<p>内部でBox-Muller法を用いています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dnd2_002drand"></a><u>Function:</u> <b>make-nd2-rand</b><i> μ Σ</i></dt>
+<dd><p>平均μ,共分散行列Σをもつ二次元ガウス分布乱数を生成する関数を返します。
+</p>
+<p>内部でBox-Muller法を用いています。
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="naoyat_002emath_002edistribution"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002erandom" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002eerf" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath_002edistribution-1"></a>
+<h3 class="subsection">2.4.2 naoyat.math.distribution</h3>
+<p>分布
+</p>
+<dl>
+<dt><a name="index-make_002dBernoulli_002ddistribution"></a><u>Function:</u> <b>make-Bernoulli-distribution</b></dt>
+<dd><p>ベルヌーイ分布 Bernoulli distribution
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbinomial_002ddistribution"></a><u>Function:</u> <b>make-binomial-distribution</b></dt>
+<dd><p>二項分布 binomial distribution
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dbeta_002ddistribution"></a><u>Function:</u> <b>make-beta-distribution</b></dt>
+<dd><p>ベータ分布 beta distribution
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dmultinomial_002ddistribution"></a><u>Function:</u> <b>make-multinomial-distribution</b></dt>
+<dd><p>多項分布 multinomial distribution
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-make_002dDirichlet_002ddistribution"></a><u>Function:</u> <b>make-Dirichlet-distribution</b></dt>
+<dd><p>ディリクレ分布 Dirichlet distribution
+</p></dd></dl>
+
+<hr size="6">
+<a name="naoyat_002emath_002eerf"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002edistribution" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002eh" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath_002eerf-1"></a>
+<h3 class="subsection">2.4.3 naoyat.math.erf</h3>
+<p>エラー関数 (error function)
+</p>
+<dl>
+<dt><a name="index-erf"></a><u>Function:</u> <b>erf</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-erfc"></a><u>Function:</u> <b>erfc</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-complex_002derf"></a><u>Function:</u> <b>complex-erf</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-inverse_002derf"></a><u>Function:</u> <b>inverse-erf</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-normal_002dcumulative_002ddistribution"></a><u>Function:</u> <b>normal-cumulative-distribution</b></dt>
+</dl>
+<dl>
+<dt><a name="index-_00ce_00a6"></a><u>Function:</u> <b>Φ</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-probit"></a><u>Function:</u> <b>probit</b></dt>
+</dl>
+
+<hr size="6">
+<a name="naoyat_002emath_002eh"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002eerf" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002eprime" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath_002eh-2"></a>
+<h3 class="subsection">2.4.4 naoyat.math.h</h3>
+<p>libmには含まれるがgaucheには載ってないものを（c-wrapper経由で）を使うためのモジュールです。
+</p>
+<dl>
+<dt><a name="index-erf-1"></a><u>Function:</u> <b>erf</b></dt>
+<dd><p>erf関数 (error function)
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-erfc-1"></a><u>Function:</u> <b>erfc</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-tgamma"></a><u>Function:</u> <b>tgamma</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-_00ce_0093"></a><u>Function:</u> <b>Γ</b></dt>
+<dd><p>Γ関数 (true gamma)
+</p></dd></dl>
+
+<hr size="6">
+<a name="naoyat_002emath_002eprime"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002eh" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath_002eh-1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emath_002eprime-1"></a>
+<h3 class="subsection">2.4.5 naoyat.math.prime</h3>
+<p>素数
+</p>
+<dl>
+<dt><a name="index-primes_002duntil"></a><u>Function:</u> <b>primes-until</b><i> n</i></dt>
+<dd><p>n以下の素数をリストで返します。キャッシュがあればそれを利用します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prepare_002dprimes_002duntil"></a><u>Function:</u> <b>prepare-primes-until</b></dt>
+<dd><p>n以下の素数を求め、キャッシュしておきます。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prime_003f"></a><u>Function:</u> <b>prime?</b><i> n</i></dt>
+<dd><p>nが素数かどうかを判定し、真偽値を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-prime_002dfactors"></a><u>Function:</u> <b>prime-factors</b></dt>
+</dl>
+<dl>
+<dt><a name="index-prime_002dfactors_002a"></a><u>Function:</u> <b>prime-factors*</b></dt>
+</dl>
+<dl>
+<dt><a name="index-prime_002dfactor_002dtable"></a><u>Function:</u> <b>prime-factor-table</b></dt>
+</dl>
+
+<dl>
+<dt><a name="index-largest_002dprime_002dfactor"></a><u>Function:</u> <b>largest-prime-factor</b><i> n</i></dt>
+<dd><p>nの素因数のうち最も大きいものを返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-nth_002dprime"></a><u>Function:</u> <b>nth-prime</b><i> n</i></dt>
+<dd><p>n番目の素数を返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-the_002dsum_002dof_002dthe_002dprimes_002dbelow_002dn"></a><u>Function:</u> <b>the-sum-of-the-primes-below-n</b></dt>
+<dd><p>nまでの素数の和を返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-longest_002dsum_002dof_002dconsecutive_002dprimes"></a><u>Function:</u> <b>longest-sum-of-consecutive-primes</b><i> n</i></dt>
+<dd><p>nまでの数で、連続する素数の和である数のうち、最も多くの素数から成るものを返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-n_002ddigit_002dprimes"></a><u>Function:</u> <b>n-digit-primes</b><i> n</i></dt>
+<dd><p>n桁の素数をリストで返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-fast_002dprime_003f"></a><u>Function:</u> <b>fast-prime?</b><i> n [times]</i></dt>
+<dd><p>Miller-Rabin法を用いた素数判定を行い、真偽値を返します。
+但しnが2の場合は<code>#t</code>を、2以外の偶数の場合は<code>#f</code>を無条件に返します。
+Miller-Rabin法の繰返し回数はtimesで指定します。（省略した場合は3）
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="naoyat_002emath_002eh-1"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002eprime" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002egraph" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emath" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h3 class="subsection">2.4.6 naoyat.math.h</h3>
+<p>libmの関数でgaucheに載ってないやつ（c-wrapper経由）
+</p><hr size="6">
+<a name="naoyat_002egraph"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emath_002eh-1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002egraph_002egd" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002egraph-1"></a>
+<h2 class="section">2.5 naoyat.graph</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002egraph_002egd">2.6 naoyat.graph.gd</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002egraph_002eopengl">2.7 naoyat.graph.opengl</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="naoyat_002egraph_002egd"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002egraph" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002egraph_002eopengl" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002egraph_002egd-1"></a>
+<h2 class="section">2.6 naoyat.graph.gd</h2>
+
+<hr size="6">
+<a name="naoyat_002egraph_002eopengl"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002egraph_002egd" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002ematrix" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002egraph_002eopengl-1"></a>
+<h2 class="section">2.7 naoyat.graph.opengl</h2>
+<hr size="6">
+<a name="naoyat_002ematrix"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002egraph_002eopengl" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002ebinary" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002ematrix-1"></a>
+<h2 class="section">2.8 naoyat.matrix</h2>
+
+<p>R言語風の行列演算記法を提供します。
+但し、添字は０ベースです。
+</p><hr size="6">
+<a name="naoyat_002ebinary"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002ematrix" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002ebinary_002eio" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002ebinary-1"></a>
+<h2 class="section">2.9 naoyat.binary</h2>
+
+<hr size="6">
+<a name="naoyat_002ebinary_002eio"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002ebinary" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002esound" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002ebinary" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002ebinary_002eio-1"></a>
+<h3 class="subsection">2.9.1 naoyat.binary.io</h3>
+
+<p>IEEE Standard 754 (80ビット浮動小数点数) の読み書きを提供する<code>read-f80</code>/<code>write-f80</code>の２関数を提供しています。
+</p>
+<dl>
+<dt><a name="index-read_002df80"></a><u>Function:</u> <b>read-f80</b></dt>
+<dd><p>カレントポートから80ビット浮動小数点数を読み取って返します。
+の読み書きを提供する<code>read-f80</code>/<code>write-f80</code>の２関数を提供しています。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-write_002df80"></a><u>Function:</u> <b>write-f80</b><i> value</i></dt>
+<dd><p>実数値 value をカレントポートに80ビット浮動小数点数で書き込みます。
+</p></dd></dl>
+<hr size="6">
+<a name="naoyat_002esound"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002ebinary_002eio" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002esound_002eaiff" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002esound-1"></a>
+<h2 class="section">2.10 naoyat.sound</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002esound_002eaiff">2.10.1 naoyat.sound.aiff</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="naoyat_002esound_002eaiff"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002esound" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002esound" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002esound_002eaiff-1"></a>
+<h3 class="subsection">2.10.1 naoyat.sound.aiff</h3>
+
+<dl>
+<dt><a name="index-save_002das_002daiff_002dfile"></a><u>Function:</u> <b>save-as-aiff-file</b><i> file-name sample-rate sample-bit-size stereo-mode sound-vecs</i></dt>
+</dl>
+<dl>
+<dt><a name="index-save_002das_002daiff_002a"></a><u>Function:</u> <b>save-as-aiff*</b><i> file-name data sec</i></dt>
+</dl>
+<dl>
+<dt><a name="index-open_002daiff_002dfile"></a><u>Function:</u> <b>open-aiff-file</b><i> aiff-file-name</i></dt>
+</dl>
+<hr size="6">
+<a name="naoyat_002emac"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002esound_002eaiff" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac_002espeech" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emac-1"></a>
+<h2 class="section">2.11 naoyat.mac</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002espeech">2.11.1 naoyat.mac.speech</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002eapplescript">2.11.2 naoyat.mac.applescript</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<dl>
+<dt><a name="index-open_002dpaths_002dwith_002dcommand"></a><u>Function:</u> <b>open-paths-with-command</b><i> cmd paths</i></dt>
+<dd><p>リスト paths に含まれるファイルをコマンド cmd で開きます。
+</p></dd></dl>
+<dl>
+<dt><a name="index-open_002dfile"></a><u>Function:</u> <b>open-file</b><i> file1 [file2 ...]</i></dt>
+<dd><p>引数で指定したファイルをFinderで開きます。
+</p></dd></dl>
+<dl>
+<dt><a name="index-open_002dimage"></a><u>Function:</u> <b>open-image</b><i> image-file1 [image-file2 ...]</i></dt>
+<dd><p>引数で指定した画像ファイルをFinderで開きます。
+</p></dd></dl>
+<dl>
+<dt><a name="index-open_002dmovie"></a><u>Function:</u> <b>open-movie</b><i> movie-file1 [movie-file2 ...]</i></dt>
+<dd><p>引数で指定した音声/動画ファイルをQuickTimeで再生します。
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="naoyat_002emac_002espeech"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emac" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac_002eapplescript" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emac_002espeech-1"></a>
+<h3 class="subsection">2.11.1 naoyat.mac.speech</h3>
+
+<dl>
+<dt><a name="index-say"></a><u>Function:</u> <b>say</b><i> voice text</i></dt>
+<dd><p>指定の voice でテキスト text を読み上げます。
+</p>
+<p>voice は &rsquo;(Bruce Deranged Victoria Bahh Bad News Kathy Hysterical Fred Agnes Trinoids Albert Whisper Pipe Organ Cellos Vicki Bubbles Zarvox Princess Junior Good News Bells Ralph Boing) のどれかです。
+</p></dd></dl>
+<dl>
+<dt><a name="index-say_002dtuned"></a><u>Function:</u> <b>say-tuned</b></dt>
+</dl>
+<dl>
+<dt><a name="index-say_002dkatakana_002dwith_002dtune"></a><u>Function:</u> <b>say-katakana-with-tune</b></dt>
+</dl>
+
+
+<hr size="6">
+<a name="naoyat_002emac_002eapplescript"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emac_002espeech" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac_002eskype" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emac_002eapplescript-1"></a>
+<h3 class="subsection">2.11.2 naoyat.mac.applescript</h3>
+
+<dl>
+<dt><a name="index-execute_002dapplescript"></a><u>Function:</u> <b>execute-applescript</b><i> script</i></dt>
+<dd><p>AppleScriptで記述された文字列 script を実行し、結果を文字列のリストとして返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-execute_002dapplescript_002a"></a><u>Function:</u> <b>execute-applescript*</b><i> sript</i></dt>
+<dd><p>AppleScriptで記述された文字列 script を実行し、結果を文字列として返します。
+</p></dd></dl>
+<dl>
+<dt><a name="index-execute_002dapplescript_002dline"></a><u>Function:</u> <b>execute-applescript-line</b><i> one-liner</i></dt>
+<dd><p>１行のAppleScriptを実行します。
+</p></dd></dl>
+
+
+<hr size="6">
+<a name="naoyat_002emac_002eskype"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emac_002eapplescript" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002ecl" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emac" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emac_002eskype-1"></a>
+<h3 class="subsection">2.11.3 naoyat.mac.skype</h3>
+
+<dl>
+<dt><a name="index-skype_002dsend_002dcommand"></a><u>Function:</u> <b>skype-send-command</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dlaunch"></a><u>Function:</u> <b>skype-launch</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dcall"></a><u>Function:</u> <b>skype-call</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dcall_002djp"></a><u>Function:</u> <b>skype-call-jp</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dset_002dmoodtext"></a><u>Function:</u> <b>skype-set-moodtext</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dping"></a><u>Function:</u> <b>skype-ping</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dget"></a><u>Function:</u> <b>skype-get</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dshow"></a><u>Function:</u> <b>skype-show</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dget_002dprofile"></a><u>Function:</u> <b>skype-get-profile</b></dt>
+</dl>
+<dl>
+<dt><a name="index-skype_002dget_002duser_002dprofile"></a><u>Function:</u> <b>skype-get-user-profile</b></dt>
+</dl>
+<hr size="6">
+<a name="naoyat_002ecl"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emac_002eskype" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002etest" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002ecl-1"></a>
+<h2 class="section">2.12 naoyat.cl</h2>
+
+<p>Common Lisp風な
+</p>
+<p>...
+</p><hr size="6">
+<a name="naoyat_002etest"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002ecl" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emisc" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002etest-1"></a>
+<h2 class="section">2.13 naoyat.test</h2>
+
+<dl>
+<dt><a name="index-_007e_003d"></a><u>Function:</u> <b>~=</b><i> epsilon x y</i></dt>
+</dl>
+<dl>
+<dt><a name="index-every_007e_003d"></a><u>Function:</u> <b>every~=</b><i> epsilon xs ys</i></dt>
+</dl>
+<dl>
+<dt><a name="index-_007e7_003d"></a><u>Function:</u> <b>~7=</b></dt>
+<dd><p>2引数を取り、差が1e-7未満なら真を返す関数
+</p></dd></dl>
+<dl>
+<dt><a name="index-_007e8_003d"></a><u>Function:</u> <b>~8=</b></dt>
+<dd><p>2引数を取り、差が1e-8未満なら真を返す関数
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-ask_002dhuman"></a><u>Function:</u> <b>ask-human</b></dt>
+<dd><p>真偽の判断を人間に委ね、真偽値として返します。
+</p>
+<p>不明な場合は<code>#&lt;undef&gt;</code>を返します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-have_002dhuman_002dsee"></a><u>Function:</u> <b>have-human-see</b><i> proc</i></dt>
+<dd><p>procを実行した結果を人間が判断し、真偽値として返します。
+不明な場合は（判断がつくまで）procを繰り返し実行します。
+</p></dd></dl>
+
+<dl>
+<dt><a name="index-manual_002dtest_002a"></a><u>Function:</u> <b>manual-test*</b><i> msg thunk</i></dt>
+<dd><p>thunkについて、人間の判断に委ねたテストを行います。
+</p></dd></dl>
+<hr size="6">
+<a name="naoyat_002emisc"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002etest" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emisc_002eneural_002dnet" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emisc-1"></a>
+<h2 class="section">2.14 naoyat.misc</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#naoyat_002emisc_002eneural_002dnet">2.14.1 naoyat.misc.neural-net</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="naoyat_002emisc_002eneural_002dnet"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emisc" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#naoyat_002emisc" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="naoyat_002emisc_002eneural_002dnet-1"></a>
+<h3 class="subsection">2.14.1 naoyat.misc.neural-net</h3>
+
+<hr size="6">
+<a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#naoyat_002emisc_002eneural_002dnet" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e3_0083_00aa_00e3_0083_0095_00e3_0082_00a1_00e3_0083_00ac_00e3_0083_00b3_00e3_0082_00b9" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section">上</a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1"></a>
+<h1 class="appendix">A. 関数目次</h1>
+<table><tr><th valign="top">移動: &nbsp; </th><td><a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-1" class="summary-letter"><b>!</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-2" class="summary-letter"><b>~</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-3" class="summary-letter"><b>�</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-4" class="summary-letter"><b>�</b></a>
+ &nbsp; 
+<br>
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-A" class="summary-letter"><b>A</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-B" class="summary-letter"><b>B</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-C" class="summary-letter"><b>C</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-E" class="summary-letter"><b>E</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-F" class="summary-letter"><b>F</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-H" class="summary-letter"><b>H</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-I" class="summary-letter"><b>I</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-L" class="summary-letter"><b>L</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-M" class="summary-letter"><b>M</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-N" class="summary-letter"><b>N</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-O" class="summary-letter"><b>O</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-P" class="summary-letter"><b>P</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-R" class="summary-letter"><b>R</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-S" class="summary-letter"><b>S</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-T" class="summary-letter"><b>T</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-V" class="summary-letter"><b>V</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-W" class="summary-letter"><b>W</b></a>
+ &nbsp; 
+</td></tr></table>
+<table border="0" class="index-fn">
+<tr><td></td><th align="left">見出し一覧</th><th align="left"> 項</th></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-1">!</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_0021_003d"><code>!=</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-2">~</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_007e7_003d"><code>~7=</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_007e8_003d"><code>~8=</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_007e_003d"><code>~=</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-3">�</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_00ce_0093"><code>Γ</code></a></td><td valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_00ce_00a0"><code>Π</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_00ce_00a3"><code>Σ</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_00ce_00a6"><code>Φ</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-4">�</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_00cf_0083"><code>σ</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-A">A</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-ask_002dhuman"><code>ask-human</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-assoc_002dvalue"><code>assoc-value</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-assq_002dvalue"><code>assq-value</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-assv_002dvalue"><code>assv-value</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-B">B</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-box_002dmuller_002drand"><code>box-muller-rand</code></a></td><td valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-C">C</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-C"><code>C</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-complex_002derf"><code>complex-erf</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-erf"><code>erf</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-erf-1"><code>erf</code></a></td><td valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-erfc"><code>erfc</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-erfc-1"><code>erfc</code></a></td><td valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-every_007e_003d"><code>every~=</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-execute_002dapplescript"><code>execute-applescript</code></a></td><td valign="top"><a href="#naoyat_002emac_002eapplescript">2.11.2 naoyat.mac.applescript</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-execute_002dapplescript_002a"><code>execute-applescript*</code></a></td><td valign="top"><a href="#naoyat_002emac_002eapplescript">2.11.2 naoyat.mac.applescript</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-execute_002dapplescript_002dline"><code>execute-applescript-line</code></a></td><td valign="top"><a href="#naoyat_002emac_002eapplescript">2.11.2 naoyat.mac.applescript</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-expt_002a"><code>expt*</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-F">F</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-factorial"><code>factorial</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-fast_002dprime_003f"><code>fast-prime?</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-fringe"><code>fringe</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-H">H</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-have_002dhuman_002dsee"><code>have-human-see</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-I">I</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-inf_002dfilter"><code>inf-filter</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-interpolate"><code>interpolate</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-inverse_002derf"><code>inverse-erf</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-L">L</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-largest_002dprime_002dfactor"><code>largest-prime-factor</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-log10"><code>log10</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-log16"><code>log16</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-log2"><code>log2</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-logistic_002dsigmoid"><code>logistic-sigmoid</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-logit"><code>logit</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-longest_002dsum_002dof_002dconsecutive_002dprimes"><code>longest-sum-of-consecutive-primes</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-M">M</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dBernoulli_002ddistribution"><code>make-Bernoulli-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dbeta_002ddistribution"><code>make-beta-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dbinomial_002ddistribution"><code>make-binomial-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dDirichlet_002ddistribution"><code>make-Dirichlet-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dlist_002a"><code>make-list*</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dlist_002dwith_002dgenerator"><code>make-list-with-generator</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dmultinomial_002ddistribution"><code>make-multinomial-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002edistribution">2.4.2 naoyat.math.distribution</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dnd_002drand"><code>make-nd-rand</code></a></td><td valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002dnd2_002drand"><code>make-nd2-rand</code></a></td><td valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002drandom_002dint_002dlist"><code>make-random-int-list</code></a></td><td valign="top"><a href="#naoyat_002elist">2.1 naoyat.list</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-make_002duniform_002drand"><code>make-uniform-rand</code></a></td><td valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-manual_002dtest_002a"><code>manual-test*</code></a></td><td valign="top"><a href="#naoyat_002etest">2.13 naoyat.test</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-N">N</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-n_002ddigit_002dprimes"><code>n-digit-primes</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-normal_002dcumulative_002ddistribution"><code>normal-cumulative-distribution</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nth_002dprime"><code>nth-prime</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-O">O</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-open_002daiff_002dfile"><code>open-aiff-file</code></a></td><td valign="top"><a href="#naoyat_002esound_002eaiff">2.10.1 naoyat.sound.aiff</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-open_002dfile"><code>open-file</code></a></td><td valign="top"><a href="#naoyat_002emac">2.11 naoyat.mac</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-open_002dimage"><code>open-image</code></a></td><td valign="top"><a href="#naoyat_002emac">2.11 naoyat.mac</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-open_002dmovie"><code>open-movie</code></a></td><td valign="top"><a href="#naoyat_002emac">2.11 naoyat.mac</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-open_002dpaths_002dwith_002dcommand"><code>open-paths-with-command</code></a></td><td valign="top"><a href="#naoyat_002emac">2.11 naoyat.mac</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-P">P</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-prepare_002dprimes_002duntil"><code>prepare-primes-until</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-prime_002dfactor_002dtable"><code>prime-factor-table</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-prime_002dfactors"><code>prime-factors</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-prime_002dfactors_002a"><code>prime-factors*</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-prime_003f"><code>prime?</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-primes_002duntil"><code>primes-until</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-printf"><code>printf</code></a></td><td valign="top"><a href="#naoyat_002eprintf">2.3 naoyat.printf</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-probit"><code>probit</code></a></td><td valign="top"><a href="#naoyat_002emath_002eerf">2.4.3 naoyat.math.erf</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-R">R</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-random_002dinteger"><code>random-integer</code></a></td><td valign="top"><a href="#naoyat_002emath_002erandom">2.4.1 naoyat.math.random</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-read_002df80"><code>read-f80</code></a></td><td valign="top"><a href="#naoyat_002ebinary_002eio">2.9.1 naoyat.binary.io</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-S">S</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-save_002das_002daiff_002a"><code>save-as-aiff*</code></a></td><td valign="top"><a href="#naoyat_002esound_002eaiff">2.10.1 naoyat.sound.aiff</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-save_002das_002daiff_002dfile"><code>save-as-aiff-file</code></a></td><td valign="top"><a href="#naoyat_002esound_002eaiff">2.10.1 naoyat.sound.aiff</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-say"><code>say</code></a></td><td valign="top"><a href="#naoyat_002emac_002espeech">2.11.1 naoyat.mac.speech</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-say_002dkatakana_002dwith_002dtune"><code>say-katakana-with-tune</code></a></td><td valign="top"><a href="#naoyat_002emac_002espeech">2.11.1 naoyat.mac.speech</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-say_002dtuned"><code>say-tuned</code></a></td><td valign="top"><a href="#naoyat_002emac_002espeech">2.11.1 naoyat.mac.speech</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dcall"><code>skype-call</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dcall_002djp"><code>skype-call-jp</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dget"><code>skype-get</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dget_002dprofile"><code>skype-get-profile</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dget_002duser_002dprofile"><code>skype-get-user-profile</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dlaunch"><code>skype-launch</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dping"><code>skype-ping</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dsend_002dcommand"><code>skype-send-command</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dset_002dmoodtext"><code>skype-set-moodtext</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-skype_002dshow"><code>skype-show</code></a></td><td valign="top"><a href="#naoyat_002emac_002eskype">2.11.3 naoyat.mac.skype</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-sprintf"><code>sprintf</code></a></td><td valign="top"><a href="#naoyat_002eprintf">2.3 naoyat.printf</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-square"><code>square</code></a></td><td valign="top"><a href="#naoyat_002emath">2.4 naoyat.math</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-T">T</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-tgamma"><code>tgamma</code></a></td><td valign="top"><a href="#naoyat_002emath_002eh">2.4.4 naoyat.math.h</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-the_002dsum_002dof_002dthe_002dprimes_002dbelow_002dn"><code>the-sum-of-the-primes-below-n</code></a></td><td valign="top"><a href="#naoyat_002emath_002eprime">2.4.5 naoyat.math.prime</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-V">V</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-vector_002ddec_0021"><code>vector-dec!</code></a></td><td valign="top"><a href="#naoyat_002evector">2.2 naoyat.vector</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-vector_002dinc_0021"><code>vector-inc!</code></a></td><td valign="top"><a href="#naoyat_002evector">2.2 naoyat.vector</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+<tr><th><a name="g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-W">W</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-write_002df80"><code>write-f80</code></a></td><td valign="top"><a href="#naoyat_002ebinary_002eio">2.9.1 naoyat.binary.io</a></td></tr>
+<tr><td colspan="3"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">移動: &nbsp; </th><td><a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-1" class="summary-letter"><b>!</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-2" class="summary-letter"><b>~</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-3" class="summary-letter"><b>�</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_symbol-4" class="summary-letter"><b>�</b></a>
+ &nbsp; 
+<br>
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-A" class="summary-letter"><b>A</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-B" class="summary-letter"><b>B</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-C" class="summary-letter"><b>C</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-E" class="summary-letter"><b>E</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-F" class="summary-letter"><b>F</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-H" class="summary-letter"><b>H</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-I" class="summary-letter"><b>I</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-L" class="summary-letter"><b>L</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-M" class="summary-letter"><b>M</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-N" class="summary-letter"><b>N</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-O" class="summary-letter"><b>O</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-P" class="summary-letter"><b>P</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-R" class="summary-letter"><b>R</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-S" class="summary-letter"><b>S</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-T" class="summary-letter"><b>T</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-V" class="summary-letter"><b>V</b></a>
+ &nbsp; 
+<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1-1_fn_letter-W" class="summary-letter"><b>W</b></a>
+ &nbsp; 
+</td></tr></table>
+
+<hr size="6">
+<a name="SEC_About"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">冒頭</a>]</td>
+<td valign="middle" align="left">[目次]</td>
+<td valign="middle" align="left">[<a href="#g_t_00e9_0096_00a2_00e6_0095_00b0_00e7_009b_00ae_00e6_00ac_00a1" title="見出し">見出し</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1>この文書について</h1>
+<p>
+  この文書は<em>Naoya</em>によって<em>2009年10月月28日</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>を用いて生成されました。
+</p>
+<p>
+ナビゲーションパネル中のボタンには以下の意味があります。
+</p>
+<table border="1">
+  <tr>
+    <th> ボタン </th>
+    <th> 名称 </th>
+    <th> 移動先 </th>
+    <th> 1.2.3項からの移動先</th>
+  </tr>
+  <tr>
+    <td align="center"> [ &lt; ] </td>
+    <td align="center">Back</td>
+    <td>Previous section in reading order</td>
+    <td>1.2.2</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &gt; ] </td>
+    <td align="center">Forward</td>
+    <td>Next section in reading order</td>
+    <td>1.2.4</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &lt;&lt; ] </td>
+    <td align="center">FastBack</td>
+    <td>Beginning of this chapter or previous chapter</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td align="center"> [上] </td>
+    <td align="center">Up</td>
+    <td>Up section</td>
+    <td>1.2</td>
+  </tr>
+  <tr>
+    <td align="center"> [ &gt;&gt; ] </td>
+    <td align="center">FastForward</td>
+    <td>Next chapter</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td align="center"> [冒頭] </td>
+    <td align="center">冒頭</td>
+    <td>Cover (top) of document</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [目次] </td>
+    <td align="center">目次</td>
+    <td>Table of contents</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [見出し] </td>
+    <td align="center">見出し</td>
+    <td>見出し</td>
+    <td> &nbsp; </td>
+  </tr>
+  <tr>
+    <td align="center"> [ ? ] </td>
+    <td align="center">About</td>
+    <td>About (help)</td>
+    <td> &nbsp; </td>
+  </tr>
+</table>
+
+<p>
+<strong>例</strong>では、以下に示す構造を持つ文書の<strong>1.2.3項</strong>を現在位置に仮定しています。
+</p>
+
+<ul>
+  <li> 1. 第1項
+    <ul>
+      <li>1.1 第1.1項
+        <ul>
+          <li>...</li>
+        </ul>
+      </li>
+      <li>1.2 第1.2項
+        <ul>
+          <li>1.2.1 第1.2.1項</li>
+          <li>1.2.2 第1.2.2項</li>
+          <li>1.2.3 第1.2.3項 &nbsp; &nbsp;
+            <strong>&lt;== 現在位置 </strong></li>
+          <li>1.2.4 第1.2.4項</li>
+        </ul>
+      </li>
+      <li>1.3 第1.3項
+        <ul>
+          <li>...</li>
+        </ul>
+      </li>
+      <li>1.4 第1.4項</li>
+    </ul>
+  </li>
+</ul>
+
+<hr size="1">
+<p>
+ <font size="-1">
+  この文書は<em>Naoya</em>によって<em>2009年10月月28日</em>に<a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>を用いて生成されました。
+ </font>
+ <br>
+
+</p>
 </body>
 </html>
+
