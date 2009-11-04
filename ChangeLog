@@ -1,0 +1,25 @@
+2009-11-04  Naoya Tozuka  <naoya.tozuka@gmail.com>
+
+	* printf/sprintf で、-1.0 < x < 0 の場合の符号が正しく表示されない不具合を修正
+
+2009-10-28  Naoya Tozuka  <naoya.tozuka@gmail.com>
+
+	* Githubに初コミット http://github.com/naoyat/gauche-naoyat-lib
+	  
+2009-10-27  Naoya Tozuka  <naoya.tozuka@gmail.com>
+
+	* git init
+
+2009-10-25  Naoya Tozuka  <naoya.tozuka@gmail.com>
+
+	* いくつかの自作ad-hocライブラリを統合
+	* ずっと前に書いた printf とか
+	* Mac用の各種ライブラリ（ファイル開いたりApplescript投げたり）とか
+	* Project Eulerの時に使ってた数学系（主に素数関連）ライブラリとか
+	* PRMLで使ってる関数とか
+	* スピーチ系のライブラリとか
+	* 今のバージョンでそのまま使えるか分からない Skype ライブラリとか
+
+;; Local Variables:
+;; coding: utf-8
+;; End:

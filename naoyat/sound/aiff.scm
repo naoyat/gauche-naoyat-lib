@@ -125,6 +125,16 @@
 		[num-channels 0] [num-sample-frames 0] [sample-size 0] [sample-rate 0]
 		[sample-bytes 0] [half-sample-frames 0] [half-sample-rate 0])
 
+	(define (description)
+	  (string-append
+	   (format "channels: ~d\n" num-channels)
+	   (format "sample frames: ~d\n" num-sample-frames)
+	   (format "sample size: ~d\n" sample-size)
+	   (format "sample rate: ~d\n" sample-rate)
+	   (format "sample bytes: ~d\n" sample-bytes)
+	   (format "length: ~a sec\n" (/. num-sample-frames sample-rate))
+	   ))
+
 	(define (read-comm-chunk loc chunk-size)
 	  ;; The Common Chunk
 	  (let* ([%num-channels (read-u16 #f 'big-endian)]
@@ -240,6 +250,7 @@
 		((stereo-mode) (= 2 num-channels))
 		;;((rewind) #f)
 		((read) read-ssnd-actually)
+		((description desc) (description))
 		((chunk-desc) chunk-desc)
 		(else #f)))
 	))

@@ -80,6 +80,9 @@
 										 (format "~d" %int)
 										 (format (string-append "~d.~" (format "~d" %precision) ",'0d")
 												 %int %rounded))]
+							   [%-str (if (and (= 0 %int) (< %value 0))
+										  (string-append "-" %str)
+										  %str)]
 							   [%f-fmt (string-append "~" (or num "") ;"," (if zero-pad? "'0" "")
 													  (if flush-left? "" "@") "a")]
 							   [%e-fmt (string-append %f-fmt
@@ -88,11 +91,11 @@
 													  "~2,'0d")])
 						  (case type
 							[(f)
-							 (format %f-fmt %str)]
+							 (format %f-fmt %-str)]
 							[(g G)
-							 (format %f-fmt (regexp-replace #/0+$/ %str ""))]
+							 (format %f-fmt (regexp-replace #/0+$/ %-str ""))]
 							[(e E)
-							 (format %e-fmt %str type (abs %e-offset))] ))))
+							 (format %e-fmt %-str type (abs %e-offset))] ))))
 					
 					(display (match 'before) out)
 					;; warnings
