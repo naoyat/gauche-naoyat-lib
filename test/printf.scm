@@ -206,6 +206,7 @@
 (test* "%E" "3.140000E+00" (sprintf "%E" 3.14))
 
 (test-section "%g")
+(test* "%g" "3" (sprintf "%g" 3.0))
 (test* "%g" "3.14" (sprintf "%g" 3.14))
 (test* "%g" "-3.14" (sprintf "%g" -3.14))
 (test* "%g" "3.1415926" (sprintf "%g" 3.1415926))

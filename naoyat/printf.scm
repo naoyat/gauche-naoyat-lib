@@ -93,7 +93,7 @@
 							[(f)
 							 (format %f-fmt %-str)]
 							[(g G)
-							 (format %f-fmt (regexp-replace #/0+$/ %-str ""))]
+							 (format %f-fmt (regexp-replace #/\.?0+$/ %-str ""))]
 							[(e E)
 							 (format %e-fmt %-str type (abs %e-offset))] ))))
 					
