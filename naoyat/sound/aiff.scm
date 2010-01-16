@@ -247,6 +247,8 @@
 		((file-name) aiff-file-name)
 		((sample-rate) sample-rate)
 		((sample-bit-size) sample-size)
+		((num-sample-frames) num-sample-frames)
+		((length) (/ num-sample-frames sample-rate)) ;有理数で返すよ
 		((stereo-mode) (= 2 num-channels))
 		;;((rewind) #f)
 		((read) read-ssnd-actually)

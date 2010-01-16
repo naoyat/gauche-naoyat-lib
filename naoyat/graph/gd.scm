@@ -13,6 +13,9 @@
 
 		  gd-image-string+
 		  gd-image-string+i
+		  
+		  *graph-bar-mode*
+		  *graph-default-ink*
 		  ))
 (select-module naoyat.graph.gd)
 

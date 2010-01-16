@@ -28,14 +28,13 @@
   (cdr (or (assoc key assoc-list) '(#f . #f))))
 
 
-(define (make-list-with-generator len gen)
-  (let loop ((i len) (res '()))
-    (if (zero? i) (reverse! res)
-        (loop (- i 1) (cons (gen) res)))))
-
+(define (make-list-with-generator len gen-proc)
+  (let loop ([i (- len 1)] [res '()])
+    (if (< i 0) (reverse! res)
+        (loop (- i 1) (cons (gen-proc i) res)))))
 
 (define (make-random-int-list len min max)
-  (define (rnd) (random-integer min max))
+  (define (rnd x) (random-integer min max))
   (make-list-with-generator len rnd))
 
 
